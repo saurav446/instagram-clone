@@ -180,7 +180,7 @@ function App() {
             </a> 
 
             {
-         user ?
+         user?.displayName ?
          <Button onClick={() => auth.signOut()} >Log Out</Button> :
          (
            <div className="app__loginContainer">
@@ -207,9 +207,11 @@ function App() {
             post.map(({id,post}) => 
               <Post 
               key={id}
+              postId={id}
               username={post.username}
               caption={post.caption}
               ImageUrl={post.ImageUrl}
+              user={user}
               />
               )
           }

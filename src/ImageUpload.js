@@ -21,7 +21,7 @@ const ImageUpload = ({username}) => {
     const handleUpload = (e) =>{
         setOpenProgress(true);
         e.preventDefault();
-       const upload  = storage.ref(`images/${image.name}`).put(image ? image : '');
+       const upload  = storage.ref(`images/${image.name}`).put(image);
 
        upload.on(
            "state_changed",
